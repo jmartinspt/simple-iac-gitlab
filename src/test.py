@@ -2,7 +2,7 @@
 Unit testing of the automatic batch processing application
 """
 import unittest
-from src.app import squares
+from app import squares
  
  
 class AppTests(unittest.TestCase):
