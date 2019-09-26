@@ -2,7 +2,6 @@ image: python:3.6-slim
  
 before_script:
   - python -V # Print out python version for debugging
-  - pip install pylint
  
 stages:
   - build
@@ -11,6 +10,8 @@ stages:
 build_job:
   stage: build
   script:
+    - echo "Install dependencies"
+    - pip install pylint
     - echo "Build - Check code"
     - pylint tests/test.py
 
