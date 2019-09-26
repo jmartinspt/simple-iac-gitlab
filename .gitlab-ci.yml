@@ -1,12 +1,13 @@
-image: docker:latest
-
-services:
-  - docker:dind
-
+image: python:3.6-slim
+ 
 before_script:
-  - docker info
-
-build:
-  stage: build
-  script:
-    - docker ps -a
+- python -V # Print out python version for debugging
+ 
+stages:
+- test
+ 
+test_job:
+stage: test
+script:
+- echo "Running tests"
+- python -m unittest discover -s "./tests/"
